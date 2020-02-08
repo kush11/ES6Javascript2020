@@ -8,6 +8,15 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
+            "program": "/home/kush/Documents/ES6Javascript2020/Array_Helper_Method/reduce.js",
+            "skipFiles": [
+                "<node_internals>/**"
+            ]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
             "skipFiles": [
                 "<node_internals>/**"
             ],
