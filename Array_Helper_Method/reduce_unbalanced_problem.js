@@ -46,11 +46,50 @@ var deskTypes = desks.reduce(function (prev, desk) {
 console.log(deskTypes);
 
 function unique(array) {
+    let x = (array) => array.filter((v, i) => array.indexOf(v) === i)
+    console.log(x(array))
+    let unique = [...new Set(array)];
+    console.log('uniqque', unique)
     return array.reduce((prev, data) => {
         // var rr = array.find(da=> {return da==data})
         // console.log(rr)
-        prev.push(array.find(da=>da==data))
+        prev.push(array.find(da => da == data));
         return prev
     }, [])
 }
 console.log(unique([1, 1, 2, 3, 4, 4]))
+
+
+function replaceThe(str) {
+    var data = str.split(" ");
+    var vowel = ['a', 'e', 'i', 'o', 'u'];
+    var result = data.map((st, index, arra) => {
+        console.log(index)
+        console.log(st);
+        // console.log(arra)
+        if (st === 'the') {
+            if (vowel.includes(data[index + 1][0])) {
+                return data[index] = 'an'
+            }
+            return data[index] = 'a'
+        }
+        return st
+    });
+    return result.join(' ');
+}
+console.log(replaceThe("the egg, the spoon and the espionage"))
+
+
+function oddishOrEvenish(num) {
+	var data = num.toString().split("")
+	var sum = 0;
+	var result = data.map((res,index)=>{
+		return sum+=parseInt(res);
+	});
+	if(parseInt(result[result.length-1]) % 2=== 0){
+		return 'Evenish';
+    }
+    else
+	return 'Oddish';
+}
+console.log(oddishOrEvenish(373));
